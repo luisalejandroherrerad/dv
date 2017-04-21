@@ -12,10 +12,10 @@ var app = angular.module('shopApp', [
 
 app.config(function($routeProvider) {
 	$routeProvider.otherwise({
-		redirectTo: '/catalog'
+		redirectTo: '/cart'
 	});
 });
-	
+
 
 
 
