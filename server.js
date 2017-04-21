@@ -7,8 +7,8 @@ var app = express();
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
-app.listen('3000', function(){
-	console.log('Server runing at http://localhost:3000 !!')
+app.listen('8080', function(){
+	console.log('Server runing at http://localhost:8080 !!')
 })
 
 app.get('/',function(req,res){
