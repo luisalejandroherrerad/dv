@@ -71,92 +71,39 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="left-sidebar">
-						<h2>Categorias</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							
-							<div class="panel panel-default" ng-repeat="product in productCatalog">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">{{product.category | unique: 'category'}}</a></h4>
-								</div>
-							</div>
 
-							<!-- <div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Rines, Llantas y Frenos
-										</a>
-									</h4>
-								</div>
-								<div id="sportswear" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Rines </a></li>
-											<li><a href="#">Llantas </a></li>
-											<li><a href="#">Frenos </a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Sistema electrico
-										</a>
-									</h4>
-								</div>
-								<div id="mens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Fusibles</a></li>
-											<li><a href="#">Baterias</a></li>
-											<li><a href="#">Audio</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Motor</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Transmisión</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Dirección</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Suspensión</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Carroceria y chasis</a></h4>
-								</div>
-							</div> -->
+						<h2>Buscar producto</h2>
+
+						<div id="searchBox" >
+							<input id="searchTextbox" type="text" ng-model='search'/>
+						</div>
 
 
+						<!--category-products-->
+						<h2><br><br>Categorias</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default" ng-repeat="product in productCatalog | unique: 'category'">
+								<div class="panel-heading">
+									<h4 class="panel-title"><input type='checkbox' ng-model=search.category><a href="#"> {{ removeSpecialCharacters(product.category) }}</a></h4>
+								</div>
+							</div>
+						</div>
+						<!--/category-products ng-click="search.category = product.category"-->
+ 						
 
-						</div><!--/category-products-->
-					
-						<div class="brands_products"><!--brands_products-->
+
+						<!--brands_products-->
+						<div class="brands_products">
 							<h2>Marcas</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<li ng-repeat="product in productCatalog"><a href="#">{{product.brand | unique: 'brand'}}</a></li>
+									<li ng-repeat="product in productCatalog | unique: 'brand'"><a href="#">{{ removeSpecialCharacters(product.brand) }}</a></li>
 								</ul>
 							</div>
-						</div><!--/brands_products-->
+						</div>
+						<!--/brands_products-->
+
+
 						<!--price-range-->
 						<!--
 						<div class="price-range">
@@ -165,8 +112,10 @@
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
 							</div>
-						</div><!--/price-range-->
+						</div>
 						-->
+						<!--/price-range-->
+						
 						
 						<div class="shipping text-center"><!--shipping-->
 							<img src="public/images/home/shipping.jpg" alt="" />
@@ -175,14 +124,10 @@
 					</div>
 				</div>
 				
+
 				<!-- Catalogo -->
-
-
-
-
-
 				<div class="row">
-				  <div class="col-sm-3 col-md-2" ng-repeat="product in productCatalog">
+				  <div class="col-sm-3 col-md-2" ng-repeat="product in productCatalog | filter:search | filter:search.category">
 				    <div class="thumbnail">
 				      <img src="public/images/catalog/{{product.image}}">
 				      <div class="caption">
@@ -194,6 +139,7 @@
 				    </div>
 				  </div>
 				</div>
+				<!-- Catalogo -->
 
 
 

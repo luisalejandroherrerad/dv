@@ -21,14 +21,44 @@ angular.module('catalog', ['ngRoute'])
 		{ id: 49411 , name: 'Bombillo halógeno' , shortDescription: 'Bombillo halógeno 100/900 w 48901-BL de gran calidad marca Narva.', description: 'Bombillo halógeno de gran calidad marca Narva.' , brand: 'Narva' , category: ['Ampolletas'] , image: '49411.jpg' , price: 11400 },
 		{ id: 102847 , name: 'Kit 5 fusibles' , shortDescription: 'Set de 5 minifusibles, diversos amperajes para automoviles.', description: 'Set de 5 minifusibles, diversos amperajes para automoviles.' , brand: 'Auto Style' , category: ['Fusibles'] , image: '102847.jpg' , price: 2900 },
 		{ id: 308334 , name: 'Radio Dvd/Usb/Bt 50WX4' , shortDescription: 'Radio, DVD, Pantalla TFT de 3.5" Bluetooth, USB, Potencia:50W x4.', description: 'Auto Radio /Reproductor DVD/Pantalla TFT de 3.5" Bluetooth Integrado y Control Directo USB para ipod /iphone/Potencia:50W x4.' , brand: 'Pionner' , category: ['Audio'] , image: '308334.jpg' , price: 540000 }
-
 	];
 
-	// if($rootScope.cart.lenght == 0){ 
-	// 	$rootScope.cart = [];
-	// }
+	$scope.removeSpecialCharacters = function(value) { 
+		return value.toString().replace(/['"]+/g, ''); 
+	};
 
-
+	// function MyCtrl($scope) {
+        
+ //    $scope.showAll = true;
+ //    $scope.checkChange = function() {
+ //        for(t in $scope.technologyArray){
+ //            if($scope.technologyArray[t].on){
+ //                $scope.showAll = false;
+ //                return;
+ //            }
+ //        }
+ //        $scope.showAll = true;
+ //    };
+    
+ //   $scope.addCategoryFilter = function(a) {
+ //       if($scope.showAll) { return true; }
+       
+ //       var sel = false;
+       
+ //        for(tech in $scope.technologyArray){
+ //            var t = $scope.technologyArray[tech];
+ //            console.log(t);
+ //            if(t.on){
+ //                if(a.technology.indexOf(t.name) == -1){
+ //                    return false;
+ //                }else{
+ //                    sel = true;
+ //                }
+ //            }           
+ //        }
+ //       return sel;
+ //    };
+	
 });
 
 
