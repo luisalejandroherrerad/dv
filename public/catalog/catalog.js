@@ -26,39 +26,6 @@ angular.module('catalog', ['ngRoute'])
 	$scope.removeSpecialCharacters = function(value) { 
 		return value.toString().replace(/['"]+/g, ''); 
 	};
-
-	// function MyCtrl($scope) {
-        
- //    $scope.showAll = true;
- //    $scope.checkChange = function() {
- //        for(t in $scope.technologyArray){
- //            if($scope.technologyArray[t].on){
- //                $scope.showAll = false;
- //                return;
- //            }
- //        }
- //        $scope.showAll = true;
- //    };
-    
- //   $scope.addCategoryFilter = function(a) {
- //       if($scope.showAll) { return true; }
-       
- //       var sel = false;
-       
- //        for(tech in $scope.technologyArray){
- //            var t = $scope.technologyArray[tech];
- //            console.log(t);
- //            if(t.on){
- //                if(a.technology.indexOf(t.name) == -1){
- //                    return false;
- //                }else{
- //                    sel = true;
- //                }
- //            }           
- //        }
- //       return sel;
- //    };
-	
 });
 
 
