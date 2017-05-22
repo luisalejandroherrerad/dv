@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('catalog', ['ngRoute'])
+angular.module('catalog', ['ngRoute','ngStorage'])
 
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/catalog',{
@@ -9,7 +9,15 @@ angular.module('catalog', ['ngRoute'])
 	})
 }])
 
-.controller('CatalogCtrl', function($scope){
+.controller('CatalogCtrl', function($scope, $localStorage){
+	//Copy the localStorage by reference
+	$scope.$storage = $localStorage;
+
+	if($scope.$storage.cart == null)
+	{
+		$scope.$storage.cart = [];
+	}
+
 	$scope.productCatalog = {};
 
 	$scope.productCatalog = [

@@ -7,7 +7,8 @@ var app = angular.module('shopApp', [
 	'catalog',
 	'cart',
 	'checkout',
-	'login'
+	'login',
+	'ngStorage'
 ]);
 
 app.config(function($routeProvider) {
@@ -15,8 +16,6 @@ app.config(function($routeProvider) {
 		redirectTo: '/catalog'
 	});
 });
-
-
 
 
 

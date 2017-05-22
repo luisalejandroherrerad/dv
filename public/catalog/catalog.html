@@ -134,15 +134,7 @@
 				<!-- Catalogo -->
 				<div class="row">
 				  <div class="col-sm-3 col-md-2" ng-repeat="product in productCatalog | filter:search | filter:search.category">
-				    <div class="thumbnail">
-				      <img src="public/images/catalog/{{product.image}}">
-				      <div class="caption">
-				        <h4>{{product.name}}</h4>
-				        <h5>{{product.price | currency}}</h5>
-				        <p>{{product.shortDescription}}</p>
-				        <h5>{{product.brand}}</h5>
-				      </div>
-				    </div>
+				    <catalog-product product = "product"></catalog-product>
 				  </div>
 				</div>
 				<!-- Catalogo -->
