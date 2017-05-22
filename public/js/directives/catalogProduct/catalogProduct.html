@@ -2,13 +2,13 @@
     <img src="public/images/catalog/{{product.image}}">
     <div class="caption">
         <h4>{{product.name}}</h4>
-        <h5>Ref: {{product.id}}</h5>
+        <h5 id="reference">Ref: {{product.id}}</h5>
         <h5>{{product.price | currency}}</h5>
         <p>{{product.shortDescription}}</p>
         <h5>{{product.brand}}</h5>
         <div class="container row">
-            <input type="text" id="quantity" size="6">
-            <button class="btn btn-success" ng-click="$storage.cart.push({'productId':'{{product.id}}','quantity': '$('#quantity').val()''})">Agregar</button>
+            <input type="text" id="quantity" size="6" placeholder="Cantidad">
+            <button class="btn btn-success" ng-click="addProductToCart(product.id, $(#quantity).val())">Agregar</button>
         </div>
     </div>
 </div>

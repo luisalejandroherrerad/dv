@@ -33,7 +33,7 @@ angular.module('catalog', ['ngRoute','ngStorage'])
 
 	$scope.removeSpecialCharacters = function(value) { 
 		return value.toString().replace(/['"]+/g, ''); 
-	};
+	};	
 });
 
 

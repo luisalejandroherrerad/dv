@@ -4,7 +4,7 @@ app.directive('catalogProduct', function(){
     scope: {
       product: '='
     },
-    templateUrl:'public/js/directives/catalogProduct.html'
+    templateUrl:'public/js/directives/catalogProduct/catalogProduct.html'
   }
 });
 
