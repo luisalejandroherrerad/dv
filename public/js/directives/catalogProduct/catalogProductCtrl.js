@@ -1,11 +1,11 @@
-app.controller('catalogProductCtrl', function($scope){
+app.controller('catalogProductCtrl', function($scope, $sessionStorage){
 
     $scope.addProductToCart = function(id){
         var cartElement = {
-            productId = product.id,
-            quantity = $('#quantity').val()
+            productId: id,
+            quantity: $('#quantity').val()
         }
-        $storage.cart.push({})
+        $sessionStorage.cart.push(cartElement)
     }
 });
 

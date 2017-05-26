@@ -9,13 +9,14 @@ angular.module('catalog', ['ngRoute','ngStorage'])
 	})
 }])
 
-.controller('CatalogCtrl', function($scope, $localStorage){
+.controller('CatalogCtrl', function($scope, $sessionStorage){
 	//Copy the localStorage by reference
-	$scope.$storage = $localStorage;
 
-	if($scope.$storage.cart == null)
+	//$scope.$storage = $sessionStorage;
+
+	if($sessionStorage.cart == null)
 	{
-		$scope.$storage.cart = [];
+		$sessionStorage.cart = [];
 	}
 
 	$scope.productCatalog = {};

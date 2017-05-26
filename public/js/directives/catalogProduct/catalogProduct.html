@@ -1,4 +1,4 @@
-<div class="thumbnail">
+<div class="thumbnail" ng-controller="catalogProductCtrl">
     <img src="public/images/catalog/{{product.image}}">
     <div class="caption">
         <h4>{{product.name}}</h4>
@@ -8,7 +8,9 @@
         <h5>{{product.brand}}</h5>
         <div class="container row">
             <input type="text" id="quantity" size="6" placeholder="Cantidad">
-            <button class="btn btn-success" ng-click="addProductToCart(product.id, $(#quantity).val())">Agregar</button>
+            <button class="btn btn-success" ng-click="addProductToCart(product.id)">Agregar</button>
         </div>
     </div>
 </div>
+
+<!-- , $(#quantity).val() -->
