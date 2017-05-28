@@ -21,7 +21,7 @@ angular.module('catalog', ['ngRoute','ngStorage'])
 
 	$scope.productCatalog = {};
 
-	$scope.productCatalog = [
+	$sessionStorage.productCatalog = [
 		{ id: 215750 , name: 'Set de pedales', shortDescription: 'Set de 3 pedales para vehículo con un diseño deportivo.', description: 'Set de 3 pedales para vehículo, Tiene un diseño deportivo. Cumplen la norma E. C. E. 35: uso permitido para circular en vía pública.' , brand: 'Sparco' , category: ['Accesorios'] , image: '215750.jpg',  price: 45000 },
 		{ id: 215748 , name: 'Pomo Clásico' , shortDescription: 'Pomo de lujo con diseño elegante, deportivo, fácil de instalar.', description: 'Pomo de lujo con diseño elegante, deportivo, fácil de instalar.' , brand: 'Sparco' , category: ['Accesorios'] , image: '215748.jpg' , price: 48000 },
 		{ id: 135246 , name: 'Aceite 20 w 50 1 galón Super 1000' , shortDescription: 'Lubricantes Mobil, con una formulacion unica y probada.', description: 'Lubricantes Mobil Super, con una formulacion unica y probada, le brinda al motor la proteccion que necesita. Mejora la economia del combustible.' , brand: 'Mobil' , category: ['Aceites'] , image: '135246.jpg' , price:45000 },
@@ -31,6 +31,8 @@ angular.module('catalog', ['ngRoute','ngStorage'])
 		{ id: 102847 , name: 'Kit 5 fusibles' , shortDescription: 'Set de 5 minifusibles, diversos amperajes para automoviles.', description: 'Set de 5 minifusibles, diversos amperajes para automoviles.' , brand: 'Auto Style' , category: ['Fusibles'] , image: '102847.jpg' , price: 2900 },
 		{ id: 308334 , name: 'Radio Dvd/Usb/Bt 50WX4' , shortDescription: 'Radio, DVD, Pantalla TFT de 3.5" Bluetooth, USB, Potencia:50W x4.', description: 'Auto Radio /Reproductor DVD/Pantalla TFT de 3.5" Bluetooth Integrado y Control Directo USB para ipod /iphone/Potencia:50W x4.' , brand: 'Pionner' , category: ['Audio'] , image: '308334.jpg' , price: 540000 }
 	];
+
+	$scope.productCatalog = $sessionStorage.productCatalog;
 
 	$scope.removeSpecialCharacters = function(value) { 
 		return value.toString().replace(/['"]+/g, ''); 

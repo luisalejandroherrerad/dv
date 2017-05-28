@@ -7,4 +7,3 @@ app.directive('catalogProduct', function(){
     templateUrl:'public/js/directives/catalogProduct/catalogProduct.html'
   }
 });
-

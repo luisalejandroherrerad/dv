@@ -6,6 +6,7 @@ app.controller('catalogProductCtrl', function($scope, $sessionStorage){
             quantity: $('#quantity').val()
         }
         $sessionStorage.cart.push(cartElement)
+        $('#quantity').val(null)
     }
 });
 
