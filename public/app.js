@@ -5,7 +5,7 @@
 var app = angular.module('shopApp', [
 	'ngRoute',
 	'catalog',
-	'cart',
+	/*'cart',*/
 	'checkout',
 	'login',
 	'ngStorage'

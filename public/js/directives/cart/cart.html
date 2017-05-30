@@ -1,8 +1,8 @@
 
-<div ng-repeat="productCart in cart" ng-controller="cartController">
+<div ng-repeat="product in cart" ng-controller="cartCtrl" ng-init="loadProducts()">
     <tr>
         <td class="cart_product">
-            <a href=""><img src="public/images/catalog/215750.jpg" alt="" height="90"></a>
+            <a href=""><img ng-src="public/images/catalog/{{product.id}}.jpg" alt="" height="90"></a>
         </td>
         <td class="cart_description">
             <h4><a href="">{{product.name}}</a></h4>
